@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/ts/pin-input.ts',
                 'resources/ts/toast.ts',
+                'resources/ts/dropzone.ts',
             ],
             refresh: true,
             publicDirectory: 'resources',
