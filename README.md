@@ -4,10 +4,15 @@ Modus UI is a Blade component library for Laravel, designed to streamline the de
 
 ## Features
 
-- **Laravel Compatibility:** Supports Laravel versions 8 through 11.
-- **PHP Compatibility:** Works with PHP 7.4 through 8.4.
+- **Laravel Compatibility:** Supports Laravel versions 10 through 11.
+- **PHP Compatibility:** Works with PHP 8.2 through 8.4.
 - **Modern Frontend:** Built on Tailwind CSS and Flowbite for styling and components.
 - **Easy Customization:** Publish views and configurations to tailor the library to your needs.
+
+---
+
+> [!WARNING]
+> This package is currently in development and is not yet ready for production use.
 
 ---
 
