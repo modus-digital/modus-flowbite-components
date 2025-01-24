@@ -8,13 +8,13 @@
     ];
 
     $dropzoneBorderColor = match(config('modus-ui.primary_color')) {
-        'blue' => 'transition-colors duration-300 hover:border-blue-500',
-        'green' => 'transition-colors duration-300 hover:border-green-500',
-        'red' => 'transition-colors duration-300 hover:border-red-500',
-        'yellow' => 'transition-colors duration-300 hover:border-yellow-500',
-        'purple' => 'transition-colors duration-300 hover:border-purple-500',
-        'pink' => 'transition-colors duration-300 hover:border-pink-500',
-        default => 'transition-colors duration-300 hover:border-gray-500',
+        'blue' => 'transition-colors duration-300 hover:border-blue-500 hover:bg-blue-500/5',
+        'green' => 'transition-colors duration-300 hover:border-green-500 hover:bg-green-500/5',
+        'red' => 'transition-colors duration-300 hover:border-red-500 hover:bg-red-500/5',
+        'yellow' => 'transition-colors duration-300 hover:border-yellow-500 hover:bg-yellow-500/5',
+        'purple' => 'transition-colors duration-300 hover:border-purple-500 hover:bg-purple-500/5',
+        'pink' => 'transition-colors duration-300 hover:border-pink-500 hover:bg-pink-500/5',
+        default => 'transition-colors duration-300 hover:border-gray-500 hover:bg-gray-500/5',
     };
 
     $classes = $baseClasses . ' ' . ($sizeClasses[$size ?? 'md'] ?? $sizeClasses['md']);
@@ -71,7 +71,7 @@
 
         {{ $attributes }}
     >
-    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="{{ $name }}_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+    <p class="text-sm text-gray-500 dark:text-gray-300" id="{{ $name }}_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
 
     @error($name)
         <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
