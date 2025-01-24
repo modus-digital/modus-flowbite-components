@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/ts/pin-input.ts',
                 'resources/ts/toast.ts',
                 'resources/ts/dropzone.ts',
+                'resources/ts/select.ts',
             ],
             refresh: true,
             publicDirectory: 'resources',
