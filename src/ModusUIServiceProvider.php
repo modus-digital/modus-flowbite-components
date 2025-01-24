@@ -54,7 +54,7 @@ final class ModusUIServiceProvider extends ServiceProvider
 
         // Js Assets
         $this->publishes(
-            paths: [ __DIR__.'/../resources/js' => public_path('vendor/modus/modus-ui') ], 
+            paths: [ __DIR__.'/../resources/dist' => public_path('vendor/modus/modus-ui') ], 
             groups: 'modus-ui-assets'
         );
 
