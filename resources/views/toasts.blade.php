@@ -14,7 +14,7 @@
         toasts: @js($toasts),
         addToast(toast) {
             toast.id = toast.id || Date.now();
-            toast.level = toast.level || 'info';
+            toast.type = toast.type || 'info';
             this.toasts.push(toast);
         }
     }"
@@ -62,28 +62,28 @@
                 <div
                     :class="{
                         'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg': true,
-                        'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200': toast.level === 'success',
-                        'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200': toast.level === 'error',
-                        'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200': toast.level === 'warning',
-                        'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200': toast.level === 'info'
+                        'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200': toast.type === 'success',
+                        'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200': toast.type === 'error',
+                        'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200': toast.type === 'warning',
+                        'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200': toast.type === 'info'
                     }"
                 >
-                    <template x-if="toast.level === 'success'">
+                    <template x-if="toast.type === 'success'">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                         </svg>
                     </template>
-                    <template x-if="toast.level === 'error'">
+                    <template x-if="toast.type === 'error'">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"/>
                         </svg>
                     </template>
-                    <template x-if="toast.level === 'warning'">
+                    <template x-if="toast.type === 'warning'">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
                             <path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
                         </svg>
                     </template>
-                    <template x-if="toast.level === 'info'">
+                    <template x-if="toast.type === 'info'">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z"/>
                         </svg>
@@ -113,11 +113,11 @@
                 </button>
             </div>
             <div class="absolute bottom-0 left-0 h-2 rounded-r-lg rounded-b-lg" :class="{
-                'bg-green-300 dark:bg-green-600': toast.level === 'success',
-                'bg-red-300 dark:bg-red-600': toast.level === 'error', 
-                'bg-yellow-300 dark:bg-yellow-600': toast.level === 'warning',
-                'bg-blue-300 dark:bg-blue-600': toast.level === 'info',
-                'bg-gray-300 dark:bg-gray-600': !toast.level
+                'bg-green-300 dark:bg-green-600': toast.type === 'success',
+                'bg-red-300 dark:bg-red-600': toast.type === 'error', 
+                'bg-yellow-300 dark:bg-yellow-600': toast.type === 'warning',
+                'bg-blue-300 dark:bg-blue-600': toast.type === 'info',
+                'bg-gray-300 dark:bg-gray-600': !toast.type
             }" :style="{ width: progress + '%' }"></div>
         </div>
     </template>

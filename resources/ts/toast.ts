@@ -5,7 +5,7 @@ window.toast = function (message: string, options: ToastOptions) {
         detail: {
             message: message,
             title: options.title || null,
-            level: options.level || 'info'
+            type: options.type || 'info'
         }
     }));
 };
