@@ -37,7 +37,7 @@
 
         @class([
             'border text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 border-gray-300 ' . $color,
-            'dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white outline-none',
+            'dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white outline-hidden',
             'border-red-500' => $errors->has($name),
             'cursor-not-allowed opacity-50' => $disabled,
         ])

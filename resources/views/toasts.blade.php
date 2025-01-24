@@ -23,7 +23,7 @@
     <template x-for="toast in toasts" :key="toast.id">
         <div
             :id="'toast-' + toast.id"
-            class="relative w-full p-4 text-gray-500 bg-white rounded-t-lg rounded-b-md shadow dark:bg-gray-800 dark:text-gray-400"
+            class="relative w-full p-4 text-gray-500 bg-white rounded-t-lg rounded-b-md shadow-sm dark:bg-gray-800 dark:text-gray-400"
             role="alert"
             x-data="{
                 show: true,
@@ -61,7 +61,7 @@
             <div class="flex w-full">
                 <div
                     :class="{
-                        'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg': true,
+                        'inline-flex items-center justify-center shrink-0 w-8 h-8 rounded-lg': true,
                         'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200': toast.level === 'success',
                         'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200': toast.level === 'error',
                         'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200': toast.level === 'warning',
@@ -102,7 +102,7 @@
                 </div>
                 <button
                     type="button"
-                    class="ms-auto -mx-1.5 -my-1.5 bg-white justify-center items-center flex-shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                    class="ms-auto -mx-1.5 -my-1.5 bg-white justify-center items-center shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
                     x-on:click="show = false"
                     aria-label="Close"
                 >

@@ -24,7 +24,7 @@ const handleFiles = (files: FileList | null, config: HandleFilesConfig) => {
             'items-center', 
             'bg-gray-100', 
             'dark:bg-gray-700', 
-            'rounded', 
+            'rounded-sm', 
             'p-2',
             'mb-2',
             'group',
@@ -43,7 +43,7 @@ const handleFiles = (files: FileList | null, config: HandleFilesConfig) => {
         if (file.type.startsWith('image/')) {
             previewElement = document.createElement('img') as HTMLImageElement;
             (previewElement as HTMLImageElement).src = URL.createObjectURL(file);
-            previewElement.classList.add('w-6', 'h-6', 'rounded', 'object-cover', 'flex-shrink-0');
+            previewElement.classList.add('w-6', 'h-6', 'rounded-sm', 'object-cover', 'flex-shrink-0');
         } else {
             previewElement = document.createElement('div');
             previewElement.classList.add('flex-shrink-0', 'text-gray-500', 'dark:text-gray-400');
@@ -54,7 +54,7 @@ const handleFiles = (files: FileList | null, config: HandleFilesConfig) => {
         fileInfoElement.appendChild(fileNameElement);
 
         const removeButton: HTMLButtonElement = document.createElement('button');
-        removeButton.classList.add('text-gray-500', 'dark:text-gray-400', 'duration-200','p-1.5','rounded-full','group-hover:bg-red-100','group-hover:text-red-600','dark:group-hover:bg-red-900/30','dark:group-hover:text-red-400','outline-none','focus:ring-2','focus:ring-red-500/50');
+        removeButton.classList.add('text-gray-500', 'dark:text-gray-400', 'duration-200','p-1.5','rounded-full','group-hover:bg-red-100','group-hover:text-red-600','dark:group-hover:bg-red-900/30','dark:group-hover:text-red-400','outline-hidden','focus:ring-2','focus:ring-red-500/50');
         removeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
 
         removeButton.addEventListener('click', () => {

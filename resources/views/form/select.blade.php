@@ -66,7 +66,7 @@
             type="button"
             @click="toggle"
             @click.away="close"
-            class="relative w-full cursor-pointer bg-white border border-gray-300 rounded-md text-left focus:outline-none focus:ring-1 {{ $color }} {{ $currentSize['button'] }}"
+            class="relative w-full cursor-pointer bg-white border border-gray-300 rounded-md text-left focus:outline-hidden focus:ring-1 {{ $color }} {{ $currentSize['button'] }}"
             :class="{ 'border-red-500': error }"
         >
             <span x-text="selectedLabel" class="block truncate" :class="{ 'text-gray-500': !selectedLabel }"></span>
@@ -89,7 +89,7 @@
         <div 
             x-show="isOpen"
             x-transition
-            class="absolute z-10 w-full bg-white shadow-lg rounded-md text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm overflow-hidden top-full mt-2"
+            class="absolute z-10 w-full bg-white shadow-lg rounded-md text-base focus:outline-hidden sm:text-sm overflow-hidden top-full mt-2"
         >
             <div x-show="searchable" class="sticky top-0 z-20 bg-white border-b border-gray-200">
                 <div class="px-3 py-2">
@@ -97,7 +97,7 @@
                             <input
                                 x-ref="searchInput"
                                 type="text"
-                                class="w-full border-gray-300 rounded-md shadow-sm appearance-none {{ $color }} {{ $currentSize['search'] }}"
+                                class="w-full border-gray-300 rounded-md shadow-xs appearance-none {{ $color }} {{ $currentSize['search'] }}"
                                 placeholder="Search..."
                                 x-model="search"
                                 @click.stop

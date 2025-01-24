@@ -1,6 +1,6 @@
 @php
     $color = !empty($color) ? $color : config('modus-ui.primary_color');
-    $baseClass = 'inline-flex items-center justify-center font-medium focus:ring-2 focus:ring-offset-2 focus:outline-none text-sm transition-colors duration-300';
+    $baseClass = 'inline-flex items-center justify-center font-medium focus:ring-2 focus:ring-offset-2 focus:outline-hidden text-sm transition-colors duration-300';
 
     // Size classes based on whether it's icon-only or a standard button
     $sizeClasses = $iconButton ? 'p-2.5' : [
@@ -49,7 +49,7 @@
 
     // Final class assignment
     $colorClasses = $outlined ? $outlinedColorClasses[$color] : $solidColorClasses[$color];
-    $roundedClasses = $rounded ? 'rounded-full' : 'rounded';
+    $roundedClasses = $rounded ? 'rounded-full' : 'rounded-sm';
     $disabledClasses = $disabled ? 'opacity-50 cursor-not-allowed' : '';
 
     $buttonClass = implode(' ', [$baseClass, $sizeClasses, $colorClasses, $roundedClasses, $disabledClasses]);
