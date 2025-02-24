@@ -30,6 +30,7 @@ Add this line to your `tailwind.config.js` file under `content`:
 module.exports = {
     content: [
         "./vendor/modus-digital/modus-ui/src/View/Components/**/**/*.php",
+        "./vendor/modus-digital/modus-ui/resources/views/**/**/*.blade.php",
     ],
 }
 ```
@@ -47,6 +48,13 @@ php artisan vendor:publish --tag=modus-ui-config
 ---
 
 ## Usage
+
+### Blade Directive
+Add the following blade directive to your layout file:
+
+```blade
+@modusUiScripts
+```
 
 ### Blade Components
 Modus UI provides a collection of Blade components that are automatically registered. You can use them in your Blade templates like this:

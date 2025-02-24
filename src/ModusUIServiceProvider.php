@@ -16,7 +16,7 @@ final class ModusUIServiceProvider extends ServiceProvider
         $this->registerComponentPublishers();
 
         $this->handleAssetServing();
-        
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 InstallCommand::class,
@@ -31,9 +31,11 @@ final class ModusUIServiceProvider extends ServiceProvider
 
     private function registerComponents(): self
     {
-        Blade::componentNamespace('ModusDigital\\ModusUI\\View\\Components\\Form', config('modus-ui.prefix'));
+        Blade::componentNamespace('ModusDigital\\ModusUI\\View\\Components', config('modus-ui.prefix'));
 
         Blade::component('modus-ui::toasts', config('modus-ui.prefix').'::toasts');
+        Blade::component('modus-ui::tabs.index', config('modus-ui.prefix').'::tabs');
+        Blade::component('modus-ui::tabs.tab', config('modus-ui.prefix').'::tab');
 
         return $this;
     }
@@ -42,19 +44,19 @@ final class ModusUIServiceProvider extends ServiceProvider
     {
         // Config
         $this->publishes(
-            paths: [ __DIR__.'/../config/modus-ui.php' => config_path('modus-ui.php') ], 
+            paths: [ __DIR__.'/../config/modus-ui.php' => config_path('modus-ui.php') ],
             groups: 'modus-ui-config'
         );
 
         // Views
         $this->publishes(
-            paths: [ __DIR__.'/../resources/views' => resource_path('views/components') ], 
+            paths: [ __DIR__.'/../resources/views' => resource_path('views/components') ],
             groups: 'modus-ui-views'
         );
 
         // Js Assets
         $this->publishes(
-            paths: [ __DIR__.'/../resources/dist' => public_path('vendor/modus/modus-ui') ], 
+            paths: [ __DIR__.'/../resources/dist' => public_path('vendor/modus/modus-ui') ],
             groups: 'modus-ui-assets'
         );
 
@@ -66,7 +68,7 @@ final class ModusUIServiceProvider extends ServiceProvider
         Blade::directive('modusUiScripts', function () {
             $version = InstalledVersions::getPrettyVersion('modus-digital/modus-ui');
             $scripts = [];
-            
+
             if (is_file(__DIR__ . '/../resources/hot')) {
                 $url = rtrim(file_get_contents(__DIR__ . '/../resources/hot'));
 

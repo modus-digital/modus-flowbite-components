@@ -1,6 +1,6 @@
 <?php
 
-namespace ModusDigital\ModusUI\View\Components\Form;
+namespace ModusDigital\ModusUI\View\Components;
 
 use Illuminate\View\Component;
 
@@ -27,7 +27,7 @@ class FileInput extends Component
             'size' => $this->size,
             'multiple' => $this->multiple,
             'dropzone' => $this->dropzone,
-            'value' => $this->value,  
+            'value' => $this->value,
             'placeholder' => $this->placeholder,
             'accept' => $this->accept,
         ]);

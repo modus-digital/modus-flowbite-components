@@ -1,6 +1,6 @@
 <?php
 
-namespace ModusDigital\ModusUI\View\Components\Form;
+namespace ModusDigital\ModusUI\View\Components;
 
 use Illuminate\View\Component;
 

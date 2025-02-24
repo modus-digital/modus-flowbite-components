@@ -7,5 +7,6 @@ export type ModusUIConfig = {
     toasts: {
         position: ToastPosition;
         duration: number;
+        progress: boolean;
     };
 }

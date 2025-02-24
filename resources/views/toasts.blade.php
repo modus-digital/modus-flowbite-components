@@ -112,13 +112,18 @@
                     </svg>
                 </button>
             </div>
-            <div class="absolute bottom-0 left-0 h-2 rounded-r-lg rounded-b-lg" :class="{
-                'bg-green-300 dark:bg-green-600': toast.type === 'success',
-                'bg-red-300 dark:bg-red-600': toast.type === 'error', 
-                'bg-yellow-300 dark:bg-yellow-600': toast.type === 'warning',
-                'bg-blue-300 dark:bg-blue-600': toast.type === 'info',
-                'bg-gray-300 dark:bg-gray-600': !toast.type
-            }" :style="{ width: progress + '%' }"></div>
+            <div 
+                x-show="@js(config('modus-ui.toasts.progress', true))"
+                class="absolute bottom-0 left-0 h-2 rounded-r-lg rounded-b-lg" 
+                :class="{
+                    'bg-green-300 dark:bg-green-600': toast.type === 'success',
+                    'bg-red-300 dark:bg-red-600': toast.type === 'error', 
+                    'bg-yellow-300 dark:bg-yellow-600': toast.type === 'warning',
+                    'bg-blue-300 dark:bg-blue-600': toast.type === 'info',
+                    'bg-gray-300 dark:bg-gray-600': !toast.type
+                }" 
+                :style="{ width: progress + '%' }"
+            ></div>
         </div>
     </template>
 </div>
