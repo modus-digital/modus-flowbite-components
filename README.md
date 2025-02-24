@@ -4,10 +4,15 @@ Modus UI is a Blade component library for Laravel, designed to streamline the de
 
 ## Features
 
-- **Laravel Compatibility:** Supports Laravel versions 8 through 11.
-- **PHP Compatibility:** Works with PHP 7.4 through 8.4.
+- **Laravel Compatibility:** Supports Laravel versions 10 through 11.
+- **PHP Compatibility:** Works with PHP 8.2 through 8.4.
 - **Modern Frontend:** Built on Tailwind CSS and Flowbite for styling and components.
 - **Easy Customization:** Publish views and configurations to tailor the library to your needs.
+
+---
+
+> [!WARNING]
+> This package is currently in development and is not yet ready for production use.
 
 ---
 
@@ -16,7 +21,18 @@ Modus UI is a Blade component library for Laravel, designed to streamline the de
 ### Step 1: Install the package via Composer
 
 ```bash
-composer require modusdigital/modus-ui
+composer require modus-digital/modus-ui
+```
+
+Add this line to your `tailwind.config.js` file under `content`:
+
+```js
+module.exports = {
+    content: [
+        "./vendor/modus-digital/modus-ui/src/View/Components/**/**/*.php",
+        "./vendor/modus-digital/modus-ui/resources/views/**/**/*.blade.php",
+    ],
+}
 ```
 
 ### Step 2: Publish configuration
@@ -33,11 +49,18 @@ php artisan vendor:publish --tag=modus-ui-config
 
 ## Usage
 
+### Blade Directive
+Add the following blade directive to your layout file:
+
+```blade
+@modusUiScripts
+```
+
 ### Blade Components
 Modus UI provides a collection of Blade components that are automatically registered. You can use them in your Blade templates like this:
 
 ```blade
-<x-modus-ui::button type="blue">
+<x-modus-ui::button>
     Click Me
 </x-modus-ui::button>
 ```
@@ -61,9 +84,12 @@ You can override these defaults by publishing the respective resources, as shown
 
 ## Requirements
 
-- PHP 7.4 - 8.4
-- Laravel 8 - 11
-- Node.js and npm (for building frontend assets, if needed)
+- PHP 8.2 - 8.4
+- Laravel 10 - 11
+- Tailwind CSS
+- Flowbite
+- Alpine.js
+- Node.js and npm
 
 ---
 

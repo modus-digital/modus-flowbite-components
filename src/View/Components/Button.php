@@ -1,6 +1,6 @@
 <?php
 
-namespace ModusDigital\ModusUI\View\Components\Form;
+namespace ModusDigital\ModusUI\View\Components;
 
 use Closure;
 use Illuminate\View\Component;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 class Button extends Component
 {
     public function __construct(
-        public string $color = 'blue',
+        public string $color = '',
         public ?string $href = null,
         public string $type = 'button',
         public string $size = 'md',
@@ -22,7 +22,7 @@ class Button extends Component
 
     public function render(): View|Closure|string
     {
-        return view('modus-ui::forms.button', [
+        return view('modus-ui::form.button', [
             'color' => $this->color,
             'href' => $this->href,
             'type' => $this->type,
