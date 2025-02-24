@@ -1,5 +1,5 @@
 {
-    "name": "modus-digital/modus-ui",
+    "name": "modus-digital/modus-flowbite-components",
     "version": "0.1.0",
     "description": "A Component library based on TailwindCSS and Flowbite crafted by Modus",
     "type": "library",
